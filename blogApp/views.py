@@ -29,3 +29,18 @@ def create_post(request):
       form.save()
       messages.success(request,'Post added successfully!')
    return render(request, 'blogApp/newPost.html', {'form':form})
+
+ # render page using update.html as template; updates existing posts
+def update_post(request, post_id):
+   post = Post.objects.get(pk = post_id)
+   data ={'title': post.title, 'create_date':post.create_date, 'author': post.author, 'category':post.catogory,'description':post.description, 'body':post.body, 'image_url':post.image_url}
+   
+   if request.method == 'POST':
+      form = PostForm(request.POST, instance = post)
+      if form.is_valid():
+         form.save()
+         messages.success(request,'Post updated successfully!')
+   else:
+      
+      form = PostForm(initial = data)
+   return render(request, 'blogApp/update.html', {'form':form})

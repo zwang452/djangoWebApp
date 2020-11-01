@@ -8,4 +8,6 @@ urlpatterns = [
     # ex: /blogApp/post_id
     path('<int:post_id>/', views.detail, name='detail'),
     path('create/', views.create_post, name='create_post'),
+    path('<int:post_id>/update/', views.update_post, name='update_post'),
+    
 ]
