@@ -1,17 +1,17 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.contrib import messages
 from .models import Post
 from .forms import PostForm
+
 
  # render page using index.html as template and load all posts into a list
 def index(request):
     posts = Post.objects.all().order_by('create_date')
 
-    form = PostForm(request.POST or None)
-    if form.is_valid():
-       form.save()
 
-    return render(request, 'blogApp/index.html', {'posts':posts, 'form':form})
+
+    return render(request, 'blogApp/index.html', {'posts':posts})
 
  # render page using post.html as template and load the post of interest, lists by categoty and lists by author
 def detail(request, post_id):
@@ -27,4 +27,5 @@ def create_post(request):
    form = PostForm(request.POST or None)
    if form.is_valid():
       form.save()
+      messages.success(request,'Post added successfully!')
    return render(request, 'blogApp/newPost.html', {'form':form})
