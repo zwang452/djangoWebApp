@@ -7,7 +7,8 @@ This project is created as part of the Co=op application to SmallCloud Technolog
 1. List view of posts using a template
 2. Detail view of each post using a template
 3. Posts, authors and categories information are stored using SQLite
-3. An html form is provided for users to create a post that will be posted to the database
+4. An html form is provided for users to create a post that will be posted to the database
+5. User can also edit existing posts using an HTML form
 
 ## Views
 
