@@ -25,5 +25,5 @@ This project is created as part of the Co-op application to SmallCloud Technolog
 
 ## Contact
 
-If you want to contact me you can reach me at <zwang452@address.com>.
+If you want to contact me you can reach me at <zwang452@gmail.com>.
 
