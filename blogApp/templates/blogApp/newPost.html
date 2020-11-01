@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<title>New Post</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+
+</head>
+<div class = "border border-grey-1600 bg-gray-300">
+    <form action="/blogApp/" method="post" class = "m-5 p-2">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>

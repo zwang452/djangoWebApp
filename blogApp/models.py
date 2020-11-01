@@ -1,6 +1,7 @@
 import datetime
 from django.db import models
 from django.utils import timezone
+from datetime import datetime 
 
 # Create your models here.
 
@@ -30,7 +31,7 @@ class Post(models.Model):
 
     # the url of post picture in the static folder
     image_url = models.CharField(max_length=250)
-    create_date = models.DateTimeField('date created')
+    create_date = models.DateTimeField(default=datetime.now, blank=True)
     body = models.TextField()
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     catogory = models.ForeignKey(Catogory, on_delete=models.CASCADE, null=True)
