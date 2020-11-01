@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<title>Zitong's Blog Collections</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+{% load static %}
+
+</head>
+    
+<body class = "bg-gray-400">
+<div class="max-w-6xl mx-auto bg-gray-300">
+    <header>
+        <div class="text-center font-black text-5xl px-2 bg-white">Articles</div>
+    </header>
+
+    <!--Load the first article from the list as the featured article-->
+    <div class = "grid grid-cols-3 gap-10 px-8 mx-8 my-10 bg-gray-300">
+        <div><img class="object-contain h-68 w-68 p-5" src = "{% static 'blogApp/'|add:posts.0.image_url %}"></div>
+        <div class = "relative font-black text-5xl px-2" > <a href = "/blogApp/{{ posts.0.id }}/">{{posts.0.title}}</a> 
+            <div class = "absolute font-black text-base inset-x-0 bottom-0 pb-10 px-2">Category: {{posts.0.catogory}}</div>
+            <div class = "absolute font-thin text-base inset-x-0 bottom-0 pb-2 px-2">{{posts.0.create_date}}</div>
+        </div>
+        <div class = "px-2 relative" > <div class = "absolute right-0 bottom-0 pb-2">by {{posts.0.author}}  </div></div>
+    </div> 
+    
+    <!--pull all articles from list into grids-->
+    <div class="grid grid-cols-3 gap-10 px-8">
+        {%for post in posts %}
+        <div class = "border border-grey-1600 bg-white">
+            <div><img class="object-contain h-50 w-full" src = "{% static 'blogApp/'|add:post.image_url %}"></div>
+             <div class = "font-black text-2xl px-2" > <a href = "/blogApp/{{ post.id }}/">{{post.title}}</a> </div>
+            <div class = "px-2" >{{post.create_date}}</div>
+            <div class = "px-2" >by {{post.author}}  </div>
+            <div class = "px-2 text-sm" >Category: {{post.catogory}}  </div>
+         </div>
+           {%endfor%}
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Post
+
+ # render page using index.html as template and load all posts into a list
+def index(request):
+    posts = Post.objects.all().order_by('create_date')
+    return render(request, 'blogApp/index.html', {'posts':posts})
+
+ # render page using post.html as template and load the post of interest, lists by categoty and lists by author
+def detail(request, post_id):
+   post = Post.objects.get(pk = post_id)
+   posts_by_category = Post.objects.filter(catogory = post.catogory)
+   posts_by_author = Post.objects.filter(author = post.author)
+   return render(request, 'blogApp/post.html', {'post':post, 'post_by_category':posts_by_category, 'post_by_author':posts_by_author})
