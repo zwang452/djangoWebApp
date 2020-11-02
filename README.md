@@ -10,7 +10,7 @@ This project is created as part of the Co-op application to SmallCloud Technolog
 4. An html form is provided for users to create a post that will be posted to the database
 5. User can also edit existing posts using an HTML form
 
-## Views
+## Models
 
 ![Image of view relationship](https://github.com/zwang452/djangoWebApp/blob/main/blogApp/static/blogApp/modelsRelationship.png)
 
