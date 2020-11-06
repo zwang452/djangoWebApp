@@ -1,6 +1,5 @@
 # djangoWebApp
-Project djangoWebApp is a basic blogging web application that allows admins to update authors and posts into its database with simple HTML forms.
-This project is created as part of the Co-op application to SmallCloud Technologies using Django and Tailwind CSS.
+Project djangoWebApp is a basic blogging web application that allows admins to update authors and posts into its database with simple HTML forms using Django and Tailwind CSS.
 
 ## Views/functionalities implemented
 
